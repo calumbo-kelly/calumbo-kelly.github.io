@@ -7420,3 +7420,10 @@ form .row:first-child .floating-label-form-group {
     width: auto;
 }
 
+.portfolio-img {
+    width: 300px;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
