@@ -7427,3 +7427,14 @@ form .row:first-child .floating-label-form-group {
     margin-bottom: 10px;
 }
 
+.pixel-link {
+    font-family: 'Press Start 2P', cursive; /* or whatever pixel font you fancy */
+    text-decoration: none;
+    color: #fff; /* match your style */
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.icon-text {
+    margin-bottom: 10px; /* space between each icon-text pair */
+}
