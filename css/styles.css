@@ -7438,3 +7438,153 @@ form .row:first-child .floating-label-form-group {
 .icon-text {
     margin-bottom: 10px; /* space between each icon-text pair */
 }
+/* styles.css */
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+a {
+    color: #6f42c1;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Navbar */
+.navbar {
+    padding: 1rem 0;
+    font-weight: bold;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+/* Masthead */
+.masthead {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background-color: #6f42c1 !important;
+}
+
+.masthead .masthead-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.masthead .masthead-subheading {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+/* Divider */
+.divider-custom {
+    margin: 1.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divider-custom-line {
+    width: 100px;
+    height: 1px;
+    background-color: #2c3e50;
+    margin: 0 1rem;
+}
+
+.divider-custom-icon {
+    font-size: 2rem;
+    color: #6f42c1;
+}
+
+/* Portfolio */
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.03);
+}
+
+.portfolio-item-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-item-caption {
+    opacity: 1;
+}
+
+/* Modals */
+.modal-content {
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: #fff;
+}
+
+.modal-body img {
+    max-width: 100%;
+    border-radius: 1rem;
+}
+
+/* About Section */
+.page-section.bg-primary {
+    background-color: #6f42c1 !important;
+}
+
+.page-section-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.lead {
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
+/* Contact */
+.icon-contact {
+    font-size: 2rem;
+    color: #6f42c1;
+    margin-bottom: 0.5rem;
+}
+
+.btn-primary {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+}
+
+.btn-primary:hover {
+    background-color: #5a379f;
+    border-color: #4c2f89;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .masthead .masthead-heading {
+        font-size: 2rem;
+    }
+
+    .masthead .masthead-subheading {
+        font-size: 1rem;
+    }
+}
