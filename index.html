@@ -4,28 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calumbo Kelly</title>
-  <meta name="description" content="Calumbo Kelly: criminologist, events manager and Japan tour guide based in Osaka. Projects include IroIro Kanji.">
+  <meta name="description" content="Calumbo Kelly: project manager for inbound MICE programmes in Japan, solo entrepreneur, and maker of IroIro Kanji.">
   <meta property="og:title" content="Calumbo Kelly">
-  <meta property="og:description" content="Criminologist, events manager and Japan tour guide based in Osaka.">
-  <link rel="icon" href="assets/img/pxArt-export.png">
+  <meta property="og:description" content="Project manager for inbound MICE programmes in Japan, solo entrepreneur, and maker of IroIro Kanji.">
+  <link rel="icon" href="assets/img/avatar-iroiro.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fbfaf7;
-      --fg: #1a1a1a;
-      --muted: #6b6b6b;
-      --line: #e6e3dc;
-      --accent: #c2410c;
+      --bg: #fbfbf9;
+      --fg: #1d2230;
+      --muted: #5c6373;
+      --line: #e2e3e6;
+      --blue: #2499ea;
+      --orange: #da6817;
+      color-scheme: light;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #121212;
-        --fg: #ececec;
-        --muted: #9a9a9a;
-        --line: #2a2a2a;
-        --accent: #fb923c;
+        --bg: #14161c;
+        --fg: #eceef2;
+        --muted: #a3a9b6;
+        --line: #2b2f39;
+        --blue: #4cb0f2;
+        --orange: #f08a3e;
+        color-scheme: dark;
       }
     }
     * { box-sizing: border-box; }
@@ -34,108 +38,202 @@
       margin: 0;
       background: var(--bg);
       color: var(--fg);
-      font: 400 17px/1.6 "Inter", "Noto Sans JP", system-ui, -apple-system, "Segoe UI", sans-serif;
+      font: 400 17px/1.65 "Inter", "Noto Sans JP", system-ui, -apple-system, "Segoe UI", sans-serif;
       -webkit-font-smoothing: antialiased;
     }
-    main {
-      max-width: 620px;
-      margin: 0 auto;
-      padding: 96px 24px 64px;
-    }
+    html[lang="ja"] body { font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif; }
+    main { max-width: 620px; margin: 0 auto; padding: 40px 24px 64px; }
     a { color: inherit; }
+
+    .topbar { display: flex; justify-content: flex-end; margin-bottom: 48px; }
+    .lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; gap: 2px; }
+    .lang button {
+      font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+      border: 0; background: none; color: var(--muted);
+      border-radius: 999px; padding: 4px 12px;
+    }
+    .lang button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+
     header { display: flex; align-items: center; gap: 20px; margin-bottom: 28px; }
     .avatar {
-      width: 64px; height: 64px; border-radius: 50%;
-      image-rendering: pixelated;
-      background: var(--line);
-      flex-shrink: 0;
+      width: 84px; height: 84px; border-radius: 50%; flex-shrink: 0;
+      background: #eceef2; image-rendering: pixelated; object-fit: cover; object-position: center top;
     }
-    h1 { font-size: 26px; font-weight: 600; letter-spacing: -0.01em; margin: 0; line-height: 1.2; }
-    .jp { color: var(--muted); font-size: 15px; margin: 2px 0 0; }
-    .intro { margin: 0 0 8px; }
-    .intro.secondary { color: var(--muted); font-size: 15px; }
+    h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.01em; margin: 0; line-height: 1.2; }
+    .sub { color: var(--muted); font-size: 15px; margin: 4px 0 0; }
+    .sub .dot { color: var(--orange); }
+
+    .lead { font-size: 19px; margin: 0 0 16px; }
+    .lead .hl { color: var(--blue); }
+    p { margin: 0 0 14px; }
+    .aside { color: var(--muted); }
+
     h2 {
-      font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em;
-      color: var(--muted); margin: 56px 0 8px;
+      font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--muted); margin: 52px 0 8px;
     }
+    h2 .n { color: var(--orange); margin-right: 8px; }
     ul { list-style: none; margin: 0; padding: 0; }
     .list li { border-top: 1px solid var(--line); }
     .list li:last-child { border-bottom: 1px solid var(--line); }
-    .list a {
+    .list a, .list .row {
       display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
       padding: 14px 0; text-decoration: none;
     }
-    .list .name { font-weight: 500; }
-    .list .desc { display: block; color: var(--muted); font-size: 15px; font-weight: 400; }
-    .list .arrow { color: var(--muted); transition: transform .15s ease, color .15s ease; flex-shrink: 0; }
-    .list a:hover .name, .list a:focus-visible .name { color: var(--accent); }
-    .list a:hover .arrow, .list a:focus-visible .arrow { color: var(--accent); transform: translate(2px, -2px); }
+    .name { display: block; font-weight: 500; }
+    .desc { display: block; color: var(--muted); font-size: 15px; }
+    .when { color: var(--muted); font-size: 14px; flex-shrink: 0; white-space: nowrap; }
+    .arrow { color: var(--muted); transition: transform .15s ease, color .15s ease; flex-shrink: 0; }
+    .list a:hover .name, .list a:focus-visible .name { color: var(--blue); }
+    .list a:hover .arrow, .list a:focus-visible .arrow { color: var(--blue); transform: translate(2px, -2px); }
+
     .links { display: flex; flex-wrap: wrap; gap: 8px 24px; }
-    .links a { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; text-decoration-thickness: 1px; }
-    .links a:hover { color: var(--accent); text-decoration-color: currentColor; }
+    .links a { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; }
+    .links a:hover { color: var(--blue); text-decoration-color: currentColor; }
     footer { margin-top: 72px; color: var(--muted); font-size: 13px; }
-    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
+
+    /* Both languages are in the page; the toggle shows one. */
+    html[lang="en"] [data-lang="ja"], html[lang="ja"] [data-lang="en"] { display: none !important; }
+
     @media (max-width: 480px) {
-      main { padding: 56px 20px 48px; }
+      main { padding: 24px 20px 48px; }
+      .topbar { margin-bottom: 32px; }
+      .avatar { width: 72px; height: 72px; }
       h2 { margin-top: 44px; }
     }
   </style>
+  <script>
+    // Pick the language before first paint: saved choice, else the browser's.
+    (function () {
+      var l = null;
+      try { l = localStorage.getItem('lang'); } catch (e) {}
+      if (l !== 'en' && l !== 'ja') l = /^ja\b/i.test(navigator.language || '') ? 'ja' : 'en';
+      document.documentElement.lang = l;
+    })();
+  </script>
 </head>
 <body>
   <main>
+    <div class="topbar">
+      <div class="lang" role="group" aria-label="Language / 言語">
+        <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-set-lang="ja" aria-pressed="false">日本語</button>
+      </div>
+    </div>
+
     <header>
-      <img class="avatar" src="assets/img/pxArt-export.png" alt="">
+      <img class="avatar" src="assets/img/avatar-iroiro.png" alt="" width="84" height="84">
       <div>
-        <h1>Calumbo Kelly</h1>
-        <p class="jp" lang="ja">カラムボ・ケリー</p>
+        <h1 data-lang="en">Calumbo Kelly</h1>
+        <h1 data-lang="ja">カラムボ・ケリー</h1>
+        <p class="sub" data-lang="en">Project manager <span class="dot">·</span> solo entrepreneur <span class="dot">·</span> Japan</p>
+        <p class="sub" data-lang="ja">プロジェクトマネージャー <span class="dot">·</span> ひとり起業家 <span class="dot">·</span> 日本</p>
       </div>
     </header>
 
-    <p class="intro">Criminologist, events manager and private tour guide, based in Osaka. I like solving problems, bringing people together and making Japan easier to understand.</p>
-    <p class="intro secondary" lang="ja">大阪在住。犯罪学と応用心理学をバックグラウンドに、観光・イベント・プロジェクトマネジメントに携わっています。</p>
+    <div data-lang="en">
+      <p class="lead">A creative type with a long history of project management, now a solo entrepreneur running <span class="hl">several projects at once</span>. On purpose, mostly.</p>
+      <p>By day I manage inbound MICE programmes in Japan for some of the world's largest tech and finance companies: the meetings, incentive trips and conferences where getting a few hundred people to the right place at the right time is the whole job.</p>
+      <p class="aside">Before that I was a tour guide, which turns out to be excellent training for herding executives.</p>
+    </div>
+    <div data-lang="ja">
+      <p class="lead">根っからのクリエイターで、プロジェクトマネジメント歴は長め。いまは<span class="hl">いくつものプロジェクトを同時に回す</span>ひとり起業家です。だいたい、わざとです。</p>
+      <p>本業では、世界有数のテック企業・金融企業向けに、日本でのインバウンドMICEプログラムを手がけています。会議、インセンティブ旅行、カンファレンス。数百人を正しい時間に正しい場所へ届けること、それが仕事のすべてです。</p>
+      <p class="aside">前職はツアーガイド。役員の皆さまを誘導するには、これ以上ない訓練でした。</p>
+    </div>
 
-    <h2>Projects</h2>
+    <h2><span class="n">01</span><span data-lang="en">Projects</span><span data-lang="ja">プロジェクト</span></h2>
     <ul class="list">
       <li>
         <a href="https://www.iroirokanji.com">
-          <span><span class="name">IroIro Kanji</span><span class="desc">A card deck for learning all 2,136 jōyō kanji</span></span>
-          <span class="arrow" aria-hidden="true">↗</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://gowithguide.com/japan/work/osaka-osakan-underworld-work-with-a-local-criminologist-18120">
-          <span><span class="name">Osakan Underworld</span><span class="desc">A private Osaka tour with a local criminologist</span></span>
-          <span class="arrow" aria-hidden="true">↗</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.gowithustrips.com/">
-          <span><span class="name">Go With Us Trips</span><span class="desc">Inbound private tour guide</span></span>
+          <span>
+            <span class="name">IroIro Kanji</span>
+            <span class="desc" data-lang="en">A card deck for learning all 2,136 jōyō kanji. Founder and maker.</span>
+            <span class="desc" data-lang="ja">常用漢字2,136字すべてを学べるカードデッキ。創業者・制作者。</span>
+          </span>
           <span class="arrow" aria-hidden="true">↗</span>
         </a>
       </li>
       <li>
         <a href="https://www.fruitsinsuitsjapan.org/home-1">
-          <span><span class="name">Fruits in Suits Japan</span><span class="desc">Events programme manager</span></span>
-          <span class="arrow" aria-hidden="true">↗</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.ukatexpo2025.uk/website/15789/">
-          <span><span class="name">UK Pavilion, Expo 2025 Osaka</span><span class="desc">Bilingual visitor guide</span></span>
+          <span>
+            <span class="name">Fruits in Suits Japan</span>
+            <span class="desc" data-lang="en">Volunteer events manager</span>
+            <span class="desc" data-lang="ja">ボランティアのイベントマネージャー</span>
+          </span>
           <span class="arrow" aria-hidden="true">↗</span>
         </a>
       </li>
     </ul>
 
-    <h2>Elsewhere</h2>
+    <h2><span class="n">02</span><span data-lang="en">So far</span><span data-lang="ja">これまで</span></h2>
+    <ul class="list">
+      <li>
+        <div class="row">
+          <span>
+            <span class="name" data-lang="en">Project manager, inbound MICE</span>
+            <span class="name" data-lang="ja">インバウンドMICE プロジェクトマネージャー</span>
+            <span class="desc" data-lang="en">Programmes in Japan for global tech and finance companies</span>
+            <span class="desc" data-lang="ja">世界的なテック・金融企業の日本でのプログラム</span>
+          </span>
+          <span class="when" data-lang="en">Now</span>
+          <span class="when" data-lang="ja">現在</span>
+        </div>
+      </li>
+      <li>
+        <div class="row">
+          <span>
+            <span class="name" data-lang="en">Private tour guide</span>
+            <span class="name" data-lang="ja">プライベートツアーガイド</span>
+            <span class="desc" data-lang="en">Inbound tours in Osaka, including a criminologist's tour of the city's underworld</span>
+            <span class="desc" data-lang="ja">大阪のインバウンドツアー。犯罪学者が案内する「大阪アンダーワールド」ツアーも</span>
+          </span>
+          <span class="when" data-lang="en">Before</span>
+          <span class="when" data-lang="ja">以前</span>
+        </div>
+      </li>
+      <li>
+        <div class="row">
+          <span>
+            <span class="name" data-lang="en">Events and project management</span>
+            <span class="name" data-lang="ja">イベント・プロジェクトマネジメント</span>
+            <span class="desc" data-lang="en">Tourism, events and community projects, built on a background in criminology and applied psychology</span>
+            <span class="desc" data-lang="ja">観光、イベント、コミュニティ支援。犯罪学と応用心理学がバックグラウンド</span>
+          </span>
+          <span class="when" data-lang="en">Throughout</span>
+          <span class="when" data-lang="ja">一貫して</span>
+        </div>
+      </li>
+    </ul>
+
+    <h2><span class="n">03</span><span data-lang="en">Say hello</span><span data-lang="ja">連絡先</span></h2>
     <div class="links">
-      <a href="mailto:calumbo.kelly@gmail.com">Email</a>
+      <a href="mailto:calumbo.kelly@gmail.com"><span data-lang="en">Email</span><span data-lang="ja">メール</span></a>
       <a href="https://www.linkedin.com/in/calumbo/">LinkedIn</a>
       <a href="https://www.facebook.com/calum.kelly.96/">Facebook</a>
     </div>
 
-    <footer>© 2026 Calumbo Kelly · Osaka, Japan</footer>
+    <footer>© 2026 Calumbo Kelly</footer>
   </main>
+  <script>
+    (function () {
+      var buttons = document.querySelectorAll('[data-set-lang]');
+      function apply(l) {
+        document.documentElement.lang = l;
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].setAttribute('aria-pressed', String(buttons[i].getAttribute('data-set-lang') === l));
+        }
+      }
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+          var l = this.getAttribute('data-set-lang');
+          apply(l);
+          try { localStorage.setItem('lang', l); } catch (e) {}
+        });
+      }
+      apply(document.documentElement.lang === 'ja' ? 'ja' : 'en');
+    })();
+  </script>
 </body>
 </html>
